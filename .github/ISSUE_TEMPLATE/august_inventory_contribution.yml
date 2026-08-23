@@ -1,0 +1,60 @@
+name: "August Manual Contribution – SQL Server Inventory"
+description: "Submit ideas, scripts, risks, or section updates for the August Inventory Manual."
+title: "[August Manual]: "
+labels: ["content", "review-needed"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for contributing to the **SQL Server Inventory Template**! Fill out the fields below so maintainers can review and integrate your contribution.
+
+  - type: dropdown
+    id: section
+    attributes:
+      label: Target Section
+      description: Select the manual section your contribution applies to.
+      options:
+        - "Purpose & Scope"
+        - "Roles & Responsibilities"
+        - "Inventory Categories"
+        - "Standard Inventory Fields"
+        - "Inventory Collection Procedures"
+        - "Validation Steps"
+        - "Review Cadence"
+        - "Risk Assessment Checklist"
+        - "Best Practices & KPIs"
+        - "Scripts & Automation"
+        - "Other / General Feedback"
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_content
+    attributes:
+      label: Proposed Content or Additions
+      description: Provide the text, explanations, or outline additions you want to include.
+      placeholder: "e.g., Add Encryption Status (TDE & Certificate Expiry) under Database Metadata..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: scripts_or_queries
+    attributes:
+      label: T-SQL / PowerShell Scripts (Optional)
+      description: Include any code snippets or DMVs relevant to this section.
+      placeholder: "SELECT name, is_encrypted FROM sys.databases..."
+      render: sql
+
+  - type: textarea
+    id: operational_risks
+    attributes:
+      label: Operational Risks & Pitfalls
+      description: Describe potential risks or edge cases DBAs should watch out for.
+      placeholder: "e.g., Querying sys.dm_db_index_physical_stats on large databases can cause high I/O impact..."
+
+  - type: textarea
+    id: validation_steps
+    attributes:
+      label: Validation Steps
+      description: How should a DBA verify that this information or script ran correctly?
+      placeholder: "Execute query X and confirm returned rows match active databases..."
