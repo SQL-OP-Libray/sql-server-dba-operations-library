@@ -8,6 +8,20 @@
 
 ## 1. Purpose
 *<!-- Contributor Note: Add operational context on why inventory management matters. -->*
+An outdated or incomplete database inventory is one of the most critical hidden risks in enterprise IT infrastructure. Without a centralized, reliable source of truth for every SQL Server instance, database administration teams face severe operational vulnerabilities during production outages, security audits, disaster recovery (DR) drills, and infrastructure migrations.
+
+The primary objective of the SQL Server Inventory Standard is to establish a unified, accurate, and continually updated repository of metadata across all SQL Server instances—whether hosted on-premises, across virtualized infrastructure, or within multi-cloud environments.
+
+Key Operational Objectives
+Accelerated Incident Management (MTTR): Drastically reduce Mean Time to Resolution during production outages by providing on-call DBAs immediate visibility into server specifications, application ownership, patch levels, and underlying storage layouts.
+
+Continuous Audit & Compliance Readiness: Maintain an audit-ready baseline for compliance frameworks (SOC 2, ISO 27001, HIPAA, PCI-DSS) by tracking security configurations, authentication modes, patch baselines, and data retention policies.
+
+Proactive Risk & End-of-Life (EOL) Management: Identify unsupported database engines, missing cumulative updates (CUs), unsafe configuration settings (e.g., clr enabled, default max server memory), and unhedged database risks before they trigger service degradation.
+
+Disaster Recovery & Node Parity: Ensure failover nodes, AlwaysOn Availability Groups, and warm standby environments maintain matching build versions, collation settings, SQL Agent jobs, and security logins across secondary sites.
+
+License & Capacity Optimization: Track CPU core counts, allocated memory, and edition distribution (Enterprise vs. Standard) to prevent licensing penalties and eliminate wasted compute resources.
 
 ## 2. Scope
 *<!-- Contributor Note: Detail covered platforms (On-Prem, Azure VM, AWS EC2, Managed Instances). -->*
