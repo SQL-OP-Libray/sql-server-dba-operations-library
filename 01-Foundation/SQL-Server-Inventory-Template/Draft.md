@@ -13,6 +13,7 @@ An outdated or incomplete database inventory is one of the most critical hidden 
 The primary objective of the SQL Server Inventory Standard is to establish a unified, accurate, and continually updated repository of metadata across all SQL Server instances—whether hosted on-premises, across virtualized infrastructure, or within multi-cloud environments.
 
 Key Operational Objectives
+
 Accelerated Incident Management (MTTR): Drastically reduce Mean Time to Resolution during production outages by providing on-call DBAs immediate visibility into server specifications, application ownership, patch levels, and underlying storage layouts.
 
 Continuous Audit & Compliance Readiness: Maintain an audit-ready baseline for compliance frameworks (SOC 2, ISO 27001, HIPAA, PCI-DSS) by tracking security configurations, authentication modes, patch baselines, and data retention policies.
