@@ -237,9 +237,29 @@ Use this checklist during monthly reviews to identify high-risk conditions requi
 ---
 ## 10. Best Practices
 *<!-- Contributor Note: Add guidelines on inventory automation and documentation hygiene. -->*
+Establishing a consistent inventory standard requires strict automation and documentation hygiene across all database environments:
 
+* **Automate Discovery & Collection:** Never rely on manual spreadsheets or one-off static lists. Schedule automated PowerShell scripts and T-SQL DMVs to poll metadata daily.
+* **Enforce Naming Conventions:** Standardize hostnames, instance names, and environment tags (`PROD`, `STAGE`, `UAT`, `DEV`) across all servers to eliminate ambiguity.
+* **Maintain Zero-Trust Access:** Store collected metadata in a centralized, read-only database with strict access control. Never record clear-text passwords, secrets, or sensitive connection strings.
+* **Track Hardware & Configuration Changes:** Log changes to server vCPUs, memory allocations, or database file relocations immediately within the inventory repository.
+* **Audit Document Hygiene:** Conduct periodic reviews to remove decommissioned servers and archive obsolete database records to maintain dataset integrity.
+---
 ## 11. Metrics & KPIs
 *<!-- Contributor Note: Add sample KPIs for tracking inventory health. -->*
+Track these key performance indicators to measure inventory health and overall operational risk reduction:
 
+| Metric Name | Target Objective | Measurement Method | Operational Value |
+| :--- | :---: | :--- | :--- |
+| **Inventory Coverage Rate** | **100%** | (Registered Instances / Total Infrastructure Fleet) × 100 | Ensures zero shadow IT or unmonitored SQL servers. |
+| **Data Freshness Index** | **> 98%** | % of records updated within the last 24 hours | Prevents reliance on stale hardware or schema data. |
+| **Unassigned Asset Rate** | **0%** | Databases missing documented Business/Technical owners | Accelerates emergency escalation and MTTR during outages. |
+| **EOL Engine Exposure** | **0%** | Production instances past Microsoft Extended Support | Highlights aging database engines requiring immediate upgrade. |
+---
 ## 12. Appendices
 *<!-- Contributor Note: Reference scripts located in the /Scripts folder. -->*
+Reference operational assets and scripts located within the repository for automation:
+
+* **T-SQL Inventory Collector:** `01-Foundation/SQL-Server-Inventory-Template/Scripts/Inventory-TSQL.sql`
+* **PowerShell Automation Engine:** `01-Foundation/SQL-Server-Inventory-Template/Scripts/Inventory-PowerShell.ps1`
+* **Risk & Health Audit Suite:** `01-Foundation/SQL-Server-Inventory-Template/Scripts/Inventory-Checks.sql`
